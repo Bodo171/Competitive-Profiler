@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block form %}
+      <form action="/" method="post" align="center">
+         <div class="field">
+             <label for="user"></label>
+             <input class="input is-primary is-medium" value="{{user}}" type="text" name="user" id="user">
+             <input class="button is-primary" type="submit" value="Get stats">
+         </div>
+      </form>
+{% endblock %}
+
+{%block data %}
+    <table class="table" align="center">
+        <thead>
+        <tr>
+              <th>Year</th>
+              <th>Average rating change</th>
+              <th>First rating change</th>
+              <th>Last rating change</th>
+              <th>Maximum rating change</th>
+              <th>Favourite topics</th>
+        </tr>
+        </thead>
+      {%for report in reports%}
+          <tr>
+              <td>{{report['year']}}</td>
+              <td style="{{get_color(report['averageChange'])}}">{{report['averageChange']}}</td>
+              <td style="{{get_color(report['firstChange'])}}">{{report['firstChange']}}</td>
+              <td style="{{get_color(report['lastChange'])}}">{{report['lastChange']}}</td>
+              <td style="{{get_color(report['maxChange'])}}">{{report['maxChange']}}</td>
+              <td>
+                  {% for tag in report['favouriteTopics']%}
+                     <span class="tag {{ get_tag(tag) }}">{{ tag }}</span>
+                  {% endfor %}
+              </td>
+          </tr>
+      {% endfor %}
+    </table>
+{% endblock data %}

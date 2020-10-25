@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+  {% block message%}
+      <article class="message is-danger">
+         <div class="message-header">
+            <p>An error occurred</p>
+            </div>
+            <div class="message-body">
+                The user may not exist or Codeforces might not be available.
+                Please check if the username is correct and try again.
+            </div>
+      </article>
+  {% endblock %}

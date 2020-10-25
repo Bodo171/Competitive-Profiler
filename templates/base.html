@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bulma.css') }}">
+    <title>Competitive Programmer Profile</title>
+</head>
+<body>
+  <section class="hero is-primary">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        Competitive Profiler
+      </h1>
+      <h3 class="subtitle">
+        Beta
+      </h3>
+    </div>
+  </div>
+</section>
+  {% block message%}
+
+  {% endblock %}
+  {% block form %}
+      <form action="/" method="post" align="center">
+         <div class="field">
+             <label for="user"></label>
+             <input class="input is-primary is-medium" placeholder="User" type="text" name="user" id="user">
+             <input class="button is-primary" type="submit" value="Get stats">
+         </div>
+      </form>
+  {% endblock %}
+
+  {% block data%}
+
+  {% endblock %}
+</body>
+</html>

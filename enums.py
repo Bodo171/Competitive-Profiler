@@ -1,0 +1,2 @@
+class CFVerdict:
+    OK = 'OK'
