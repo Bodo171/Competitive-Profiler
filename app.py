@@ -23,7 +23,7 @@ def user(user):
 def start():
     if request.method == 'POST':
         return redirect(url_for('user',user=request.form['user']))
-    return render_template('base.html')
+    return render_template('start.html')
 
 
 if __name__ == '__main__':
