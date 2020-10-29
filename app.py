@@ -20,7 +20,7 @@ def user(user):
     return redirect(url_for('user',user=request.form['user']))
 
 @app.route('/', methods=['GET','POST'])
-def hello_world():
+def start():
     if request.method == 'POST':
         return redirect(url_for('user',user=request.form['user']))
     return render_template('base.html')
