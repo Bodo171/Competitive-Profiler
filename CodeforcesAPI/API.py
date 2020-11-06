@@ -2,7 +2,7 @@ import requests
 
 
 class API:
-    DOMAIN='https://codeforces.com/api/'
+    DOMAIN = 'https://codeforces.com/api/'
 
     @staticmethod
     def get_request(url,**arguments):

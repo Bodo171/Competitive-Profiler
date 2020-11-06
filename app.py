@@ -1,14 +1,17 @@
 from flask import Flask, render_template, request, redirect, url_for
 from Profilers import UserProfiler
+
 import UI
+
 app = Flask(__name__)
 
 
 @app.context_processor
 def utility_processor():
-    return dict(get_color=UI.get_color,
-                get_tag=UI.get_tag
-                )
+    return dict(
+        get_color=UI.get_color,
+        get_tag=UI.get_tag
+    )
 
 
 @app.route('/user/<user>', methods=['GET','POST'])

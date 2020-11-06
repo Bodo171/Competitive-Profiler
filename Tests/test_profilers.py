@@ -9,7 +9,7 @@ def standard_user():
 
 
 @pytest.fixture
-def standard_contest(standard_user, new_rating=1500, contest_time=datetime(2020,1,1)):
+def standard_contest(standard_user, new_rating=1500, contest_time=datetime(2020, 1, 1)):
     return dict(
             contestId=766,
             contestName='Codeforces Round #396 (Div. 2)',

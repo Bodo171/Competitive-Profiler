@@ -3,7 +3,7 @@ from Entities.problem import Problem
 
 
 class Submission:
-    def __init__(self,**kwargs):
+    def __init__(self, **kwargs):
         self.time = datetime.utcfromtimestamp(kwargs['creationTimeSeconds'])
         self.verdict = kwargs['verdict']
         self.problem = Problem(**kwargs['problem'])
