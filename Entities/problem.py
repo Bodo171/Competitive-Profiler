@@ -2,11 +2,11 @@ from copy import deepcopy
 
 
 class Problem:
-    def __init__(self,**kwargs):
+    def __init__(self, name, tags, **kwargs):
         self._contest_id = kwargs.get('contestId',None)
-        self._name = kwargs['name']
+        self._name = name
         self._rating = kwargs.get('rating', None)
-        self._tags = kwargs['tags']
+        self._tags = tags
 
     def get_contest(self):
         return self._contest_id
