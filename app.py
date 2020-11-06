@@ -9,6 +9,7 @@ def utility_processor():
     return dict(get_color=UI.get_color,
                 get_tag=UI.get_tag)
 
+
 @app.route('/user/<user>', methods=['GET','POST'])
 def user(user):
     if request.method == 'GET':
@@ -19,9 +20,12 @@ def user(user):
             return render_template('error.html')
     return redirect(url_for('user',user=request.form['user']))
 
+
 @app.route('/', methods=['GET','POST'])
 def start():
     if request.method == 'POST':
+        if request.form['user'] == '':
+            return render_template('error.html')
         return redirect(url_for('user',user=request.form['user']))
     return render_template('start.html')
 

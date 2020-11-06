@@ -10,8 +10,8 @@ class UserRatingProfiler(Profiler):
     """
 
     def __init__(self, username):
-        self.user = username
-        self._contests = self._fetch_contests(UserAPI.get_contests(self.user))
+        self._user = username
+        self._contests = self._fetch_contests(UserAPI.get_contests(self._user))
 
     @staticmethod
     def _fetch_contests(contests_data):
@@ -34,7 +34,7 @@ class UserRatingProfiler(Profiler):
         first_change = min(filtered, key=time_key).get_new_rating()
         last_change = max(filtered, key=time_key).get_new_rating()
 
-        max_change=max([contest.get_new_rating() for contest in filtered])
+        max_change = max([contest.get_new_rating() for contest in filtered])
 
         average_change = round(sum(elem.get_new_rating() for elem in filtered) / len(filtered), 2)
 
