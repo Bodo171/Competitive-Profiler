@@ -5,9 +5,10 @@ from enums import CFVerdict
 
 
 class UserSubmissionProfiler(Profiler):
-    def __init__(self,username):
+    def __init__(self, username, fetch=True):
         self._user = username
-        self._submissions = self._fetch_submissions(UserAPI.get_submissions(self._user))
+        if fetch:
+            self._submissions = self._fetch_submissions(UserAPI.get_submissions(self._user))
 
     @staticmethod
     def _fetch_submissions(submissions_data):

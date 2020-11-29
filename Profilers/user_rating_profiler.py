@@ -9,9 +9,10 @@ class UserRatingProfiler(Profiler):
       Based on the user's rating changes
     """
 
-    def __init__(self, username):
+    def __init__(self, username, fetch=True):
         self._user = username
-        self._contests = self._fetch_contests(UserAPI.get_contests(self._user))
+        if fetch:
+            self._contests = self._fetch_contests(UserAPI.get_contests(self._user))
 
     @staticmethod
     def _fetch_contests(contests_data):
