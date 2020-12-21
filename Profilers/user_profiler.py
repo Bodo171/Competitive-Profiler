@@ -14,7 +14,7 @@ class UserProfiler:
 
     def get_yearly_report_table(self):
         """
-           Creates a report of the user stored in the class, which contains
+           Creates a report of the user stored in the object, which contains
            yearly submission and rating data.
            The report is returned as a dictionary list with the fields:
                - year

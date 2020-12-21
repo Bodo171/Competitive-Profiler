@@ -1,5 +1,6 @@
 class Settings:
     CF_OPENED_YEAR = 2009
+    HAS_RECOMMENDER = False
     colors = [
             (0, '#ABABAA'),
             (1200, '#36D73A'),

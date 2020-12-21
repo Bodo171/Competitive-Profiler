@@ -25,7 +25,7 @@ class UserSubmissionProfiler(Profiler):
                 for tag in submission.get_tags():
                     count[tag] = count.get(tag, 0)+1
 
-        sorted_list=list(count.items())
+        sorted_list = list(count.items())
         sorted_list.sort(key=lambda item: item[1], reverse=True)
 
         return [element[0] for element in sorted_list]
